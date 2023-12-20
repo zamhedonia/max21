@@ -4,4 +4,4 @@
 ![icon](https://raw.githubusercontent.com/zamhedonia/max21/master/max21_preview.gif)
 
 Max 21 is a free adaptation of the dice game Mäxchen.
-You play with one phone and 3+ people in the same room.
+You play with one device and 3+ people in the same room.
