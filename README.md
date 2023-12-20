@@ -1,5 +1,5 @@
 # Max 21 - Mäxchen/Mäxle/Mexico/Mia
-## Multiplayer Dice Game Simulation
+**Multiplayer Dice Game Simulation** written in C# utilizing the Godot Engine
 
 ![icon](https://raw.githubusercontent.com/zamhedonia/max21/master/max21_preview.gif)
 
