@@ -1,0 +1,167 @@
+[gd_scene load_steps=8 format=3 uid="uid://uke4v7xjvvur"]
+
+[ext_resource type="Texture2D" uid="uid://by7jx1ockaw7t" path="res://images/background_color_text.png" id="1_3w18c"]
+[ext_resource type="Texture2D" uid="uid://bg0xg251ledj" path="res://images/up_button.png" id="2_laiaq"]
+[ext_resource type="Script" path="res://LabelController.cs" id="2_vf4q8"]
+[ext_resource type="Texture2D" uid="uid://oplmrgin51e8" path="res://images/down_button.png" id="3_t1ajc"]
+[ext_resource type="Texture2D" uid="uid://6nwk1q2kq8o4" path="res://images/close_button.png" id="4_i4rur"]
+[ext_resource type="Texture2D" uid="uid://o8andcp1jgto" path="res://images/lang_button.png" id="6_xquy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vneic"]
+font_size = 38
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(3, 3)
+
+[node name="Info" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.788235)
+offset_right = 2367.0
+offset_bottom = 5974.0
+texture = ExtResource("1_3w18c")
+
+[node name="LabelController" type="Node2D" parent="."]
+script = ExtResource("2_vf4q8")
+
+[node name="LabelDeutsch" type="Label" parent="LabelController"]
+offset_left = 41.0
+offset_top = 271.0
+offset_right = 1043.0
+offset_bottom = 3628.0
+text = "DEUTSCH:
+Mäxchen / Mäxle / 21
+3+ Spieler
+
+Spielablauf:
+
+Die Spieler sitzen im Kreis, und der Becher mit zwei Würfeln wird im Uhrzeigersinn weitergegeben.
+
+
+Würfeln:
+
+Der erste Spieler würfelt beide Würfel verdeckt im Becher und darf für sich unter den Becher schauen und das Wurf-Ergebnis betrachten.
+
+
+Ansagen und Lügen:
+
+Der Spieler sagt den anderen eine Zahl an, die er angeblich gewürfelt hat (z.B. \"43\", siehe \"Werte der Würfelpaare\").
+
+Der nächste Spieler erhält den Becher und kann die Ansage glauben oder anzweifeln.
+
+A - Glauben:
+Wenn geglaubt wird, muss der nächste Spieler die gleiche oder eine höhere Zahl würfeln oder diese vorlügen.
+
+B - Anzweifeln:
+Wenn der Spieler dem Würfler nicht glaubt, kann er den Becher öffnen und nachsehen. Sieht er die angesagte Zahl, verliert der Spieler, der den Becher geöffnet hat. Bei einer anderen Zahl im Becher verliert der schlechte Lügner.
+
+
+Werte der Würfelpaare:
+
+Die Augenzahlen der Würfel werden zusammengesetzt.
+Die höhere Augenzahl steht vorne.
+
+Beispiel:
+Augenzahlen '2' und '4' ergeben '42'.
+
+Pasch (gleiche Augenzahlen) ist höher als normale Zahlenkombinationen, wobei der höhere Pasch besser ist.
+Mäxchen (2 und 1) ist die höchste Kombination.
+
+
+Strafen:
+
+Es muss nicht mit Strafen gespielt werden, doch sie können das Spiel spaßiger gestalten.
+
+Beispiele:
+- Der Verlierer muss einen Schluck trinken.
+! Achtet darauf, verantwortungsbewusst mit Alkohol umzugehen und kennt eure eigenen Grenzen sowie die Grenzen der anderen Spieler.
+- Der Verlierer muss einen Witz erzählen.
+- Der Verlierer muss eine lustige Aufgabe erfüllen, wie zum Beispiel einen witzigen Tanz, eine alberne Verkleidung tragen oder eine humorvolle Geschichte erzählen.
+
+
+- Samu"
+label_settings = SubResource("LabelSettings_vneic")
+autowrap_mode = 3
+
+[node name="LabelEnglish" type="Label" parent="LabelController"]
+offset_left = 41.0
+offset_top = 271.0
+offset_right = 1043.0
+offset_bottom = 3628.0
+text = "ENGLISH:
+Mexican / Mia / 21
+3+ Players
+
+Game Flow:
+
+Players sit in a circle, and the cup with two dice is passed clockwise.
+
+
+Rolling:
+
+The first player rolls both dice concealed in the cup and may privately observe the result.
+
+
+Announcements and Lies:
+
+The player declares a number to the others, claiming to have rolled it (e.g., \"43,\" see \"Values of Dice Pairs\").
+
+The next player receives the cup and can choose to believe or doubt the announcement.
+
+A - Believing:
+If believed, the next player must roll the same or a higher number or bluff.
+
+B - Doubting:
+If the player doesn't believe the roller, they can open the cup and check. If the announced number is there, the player who opened the cup loses. If a different number is in the cup, the bad liar loses.
+
+
+Values of Dice Pairs:
+
+The numbers on the dice are combined.
+The higher dice number is moved to the front.
+
+Example:
+Dice showing '2' and '4' result in '42'.
+
+A pair (equal dice numbers) is higher than normal number combinations, with a higher pair being better.
+\"Mäxchen\" (2 and 1) is the highest combination.
+
+
+Penalties:
+
+Playing without penalties is an option, but they can add more fun to the game.
+
+Examples:
+- The loser must take a sip.
+! Exercise caution when consuming alcohol, ensuring responsible behavior by being aware of your own limits as well as respecting the boundaries of other players.
+- The loser must tell a joke.
+- The loser must perform a funny task, such as a humorous dance, wear a silly costume, or tell a humorous story.
+
+
+- Samu"
+label_settings = SubResource("LabelSettings_vneic")
+autowrap_mode = 3
+
+[node name="UpButton" type="TouchScreenButton" parent="."]
+position = Vector2(858, 1666)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("3_t1ajc")
+action = "textUp"
+
+[node name="DownButton" type="TouchScreenButton" parent="."]
+position = Vector2(658, 1666)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("2_laiaq")
+action = "textDown"
+
+[node name="CloseButton" type="TouchScreenButton" parent="."]
+position = Vector2(858, 85)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("4_i4rur")
+action = "Info"
+
+[node name="LanguageButton" type="TouchScreenButton" parent="."]
+position = Vector2(59, 85)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("6_xquy4")
+action = "languageSwitch"

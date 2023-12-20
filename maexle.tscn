@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://pgukmwoo3e3v"]
+
+[ext_resource type="Script" path="res://game.cs" id="1_o60wk"]
+[ext_resource type="Texture2D" uid="uid://p56d5oiks4ac" path="res://images/becher.png" id="1_vvmv8"]
+[ext_resource type="PackedScene" uid="uid://b8nda1lheodhe" path="res://wuerfel.tscn" id="2_bj8jm"]
+[ext_resource type="PackedScene" uid="uid://v8yhhsy3yg3t" path="res://MobileControls.tscn" id="4_psw5l"]
+[ext_resource type="PackedScene" uid="uid://uke4v7xjvvur" path="res://Info.tscn" id="5_0j1ae"]
+[ext_resource type="Script" path="res://Zahlenwert.cs" id="6_wftuy"]
+[ext_resource type="Texture2D" uid="uid://cp1th6p4nrpsp" path="res://images/background.png" id="7_jo160"]
+[ext_resource type="AudioStream" uid="uid://djioy3bjcvrpm" path="res://sounds/rolling.ogg" id="8_00ede"]
+[ext_resource type="Script" path="res://RollSound.cs" id="9_ytmo5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m3gcf"]
+font_size = 89
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ayl"]
+size = Vector2(16452, 3638)
+
+[node name="MaexleGame" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1246.25, 1252.5)
+scale = Vector2(83.1167, 83.5)
+texture = ExtResource("7_jo160")
+
+[node name="Zahlenwert" type="Label" parent="."]
+offset_left = 489.0
+offset_top = 997.0
+offset_right = 597.0
+offset_bottom = 1126.0
+label_settings = SubResource("LabelSettings_m3gcf")
+script = ExtResource("6_wftuy")
+
+[node name="Wuerfel" parent="." instance=ExtResource("2_bj8jm")]
+can_sleep = false
+
+[node name="Wuerfel2" parent="." instance=ExtResource("2_bj8jm")]
+
+[node name="Becher" type="Node2D" parent="."]
+position = Vector2(540, 960)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_o60wk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Becher"]
+texture = ExtResource("1_vvmv8")
+
+[node name="LegalArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LegalArea"]
+polygon = PackedVector2Array(220, 1330, 860, 1330, 760, 600, 320, 600)
+
+[node name="Boden" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boden"]
+position = Vector2(528, 3146)
+shape = SubResource("RectangleShape2D_q4ayl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boden"]
+position = Vector2(204, 1432)
+polygon = PackedVector2Array(0, 0, -1280, 0, -1280, -1280, 2560, -1280, 2560, 0, 667, 0, 552, -836, 120, -839)
+
+[node name="MobileControls" parent="." instance=ExtResource("4_psw5l")]
+
+[node name="Info" parent="." instance=ExtResource("5_0j1ae")]
+visible = false
+
+[node name="RollSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_00ede")
+script = ExtResource("9_ytmo5")

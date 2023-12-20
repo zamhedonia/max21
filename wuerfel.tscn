@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8nda1lheodhe"]
+
+[ext_resource type="Script" path="res://Wuerfel.cs" id="1_6smdc"]
+[ext_resource type="Texture2D" uid="uid://st4841xg0pe2" path="res://images/wuerfel1.png" id="2_bx8om"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4glp"]
+friction = 0.28
+bounce = 0.19
+
+[node name="Wuerfel" type="RigidBody2D"]
+position = Vector2(540, 900)
+physics_material_override = SubResource("PhysicsMaterial_s4glp")
+gravity_scale = 2.0
+script = ExtResource("1_6smdc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_bx8om")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-96, -49, -80, -80, -49, -96, 49, -96, 80, -80, 96, -49, 96, 49, 80, 80, 49, 96, -49, 96, -80, 80, -96, 49)

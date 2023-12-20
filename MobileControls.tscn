@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://v8yhhsy3yg3t"]
+
+[ext_resource type="Texture2D" uid="uid://5jqmnr43yrob" path="res://images/peek_button.png" id="1_0ldjp"]
+[ext_resource type="Script" path="res://ButtonController.cs" id="1_67ffw"]
+[ext_resource type="Texture2D" uid="uid://njcoevqs2xwk" path="res://images/Start_Button.png" id="1_76k86"]
+[ext_resource type="Texture2D" uid="uid://c5b2jfog8a8ox" path="res://images/Roll_Button.png" id="3_5tavw"]
+[ext_resource type="Texture2D" uid="uid://c7jkkp1nlbnor" path="res://images/info_button.png" id="4_mx66a"]
+[ext_resource type="Texture2D" uid="uid://bspuf5r4amtqo" path="res://images/reset_button.png" id="6_hapmb"]
+[ext_resource type="Texture2D" uid="uid://bm2slcgrq2m56" path="res://images/Doubt_Button.png" id="6_ol4gf"]
+[ext_resource type="Texture2D" uid="uid://c725vhy3gi4l" path="res://images/Believe_Button.png" id="7_rgkaj"]
+[ext_resource type="Texture2D" uid="uid://dt63wr386a27u" path="res://images/arrow.png" id="8_t5ayw"]
+
+[node name="MobileControls" type="CanvasLayer"]
+script = ExtResource("1_67ffw")
+
+[node name="Start" type="TouchScreenButton" parent="."]
+position = Vector2(215, 1613)
+scale = Vector2(0.717, 0.717)
+texture_normal = ExtResource("1_76k86")
+action = "Start"
+
+[node name="Roll" type="TouchScreenButton" parent="."]
+position = Vector2(395, 1612)
+scale = Vector2(0.717, 0.717)
+texture_normal = ExtResource("3_5tavw")
+action = "Roll"
+
+[node name="Reroll" type="TouchScreenButton" parent="."]
+action = "Roll"
+
+[node name="Peek" type="TouchScreenButton" parent="."]
+position = Vector2(858, 300)
+scale = Vector2(0.557491, 0.557491)
+texture_normal = ExtResource("1_0ldjp")
+action = "Peek"
+
+[node name="Info" type="TouchScreenButton" parent="."]
+position = Vector2(858, 85)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("4_mx66a")
+action = "Info"
+
+[node name="Info2" type="TouchScreenButton" parent="."]
+position = Vector2(61, 85)
+scale = Vector2(0.557, 0.557)
+texture_normal = ExtResource("6_hapmb")
+action = "Reset"
+
+[node name="Unveil" type="TouchScreenButton" parent="."]
+position = Vector2(604, 1612)
+scale = Vector2(0.717, 0.717)
+texture_normal = ExtResource("6_ol4gf")
+action = "Doubt"
+
+[node name="Believe" type="TouchScreenButton" parent="."]
+position = Vector2(196, 1612)
+scale = Vector2(0.717, 0.717)
+texture_normal = ExtResource("7_rgkaj")
+action = "Believe"
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(633, 385)
+texture = ExtResource("8_t5ayw")
