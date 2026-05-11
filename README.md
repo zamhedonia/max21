@@ -14,7 +14,7 @@ On GNU/Linux:
 ```
 git clone https://github.com/zamhedonia/max21.git
 ```
-3. Open Godot C# (preferably "v4.2.1.stable.mono.flathub [b09f793f5]")
+3. Open Godot C# (preferably "v4.6.2.stable.mono")
 4. Click "Import"
 5. Select the folder you just cloned (probably at "~/max21")
 6. Click "Import & Edit"
